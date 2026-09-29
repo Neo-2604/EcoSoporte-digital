@@ -1,0 +1,220 @@
+/* =========================================================
+   TICKETS LISTA
+   ========================================================= */
+
+:root {
+    --bg: #07111f;
+    --card: #101f33;
+    --primary: #16a085;
+    --primary-light: #20c997;
+    --white: #ffffff;
+    --text: #d8e2ee;
+    --muted: #91a4b8;
+    --border: rgba(255,255,255,0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    height: 70px;
+    background: #081525;
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    width: 1050px;
+    max-width: 90%;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+nav a {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.ticket-header {
+    padding: 60px 5%;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(22,160,133,0.15),
+            transparent 30%
+        ),
+        #091625;
+    border-bottom: 1px solid var(--border);
+}
+
+.ticket-header > * {
+    width: 1000px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ticket-header span {
+    color: var(--primary-light);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.ticket-header h1 {
+    margin-top: 8px;
+    color: white;
+    font-size: 40px;
+}
+
+.ticket-header p {
+    margin-top: 8px;
+    color: var(--muted);
+}
+
+.ticket-list {
+    width: 1000px;
+    max-width: 90%;
+    margin: 55px auto;
+    display: grid;
+    gap: 18px;
+}
+
+.ticket-card {
+    padding: 25px;
+    background: linear-gradient(145deg, #102136, #0c192b);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    transition: 0.25s;
+}
+
+.ticket-card:hover {
+    border-color: rgba(32,201,151,0.30);
+    transform: translateY(-2px);
+}
+
+.ticket-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.ticket-top > span:first-child {
+    color: var(--primary-light);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.estado {
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: rgba(22,160,133,0.10);
+    color: var(--primary-light);
+    font-size: 10px;
+}
+
+.ticket-card h2 {
+    color: white;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.ticket-card > p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.ticket-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 20px 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.ticket-info span {
+    color: #aab9c8;
+    font-size: 11px;
+}
+
+.ticket-card > a {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.empty-state {
+    padding: 50px 25px;
+    text-align: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.empty-state h2 {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.empty-state a {
+    display: inline-block;
+    padding: 11px 18px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+footer {
+    margin-top: 60px;
+    padding: 30px;
+    text-align: center;
+    background: #050c16;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    color: #718399;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .ticket-header h1 {
+        font-size: 34px;
+    }
+
+    .ticket-info {
+        flex-direction: column;
+        gap: 7px;
+    }
+}

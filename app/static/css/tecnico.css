@@ -1,0 +1,219 @@
+/* =========================================================
+   TECNICO.CSS
+   ========================================================= */
+
+:root {
+    --bg: #07111f;
+    --card: #101f33;
+    --primary: #16a085;
+    --primary-light: #20c997;
+    --white: #ffffff;
+    --text: #d8e2ee;
+    --muted: #91a4b8;
+    --border: rgba(255,255,255,0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+header {
+    height: 70px;
+    background: #081525;
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    width: 1150px;
+    max-width: 90%;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.user-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.user-menu span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.user-menu a {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.dashboard-header {
+    padding: 60px 5%;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(22,160,133,0.15),
+            transparent 30%
+        ),
+        #091625;
+    border-bottom: 1px solid var(--border);
+}
+
+.dashboard-header > * {
+    width: 1100px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dashboard-header span {
+    color: var(--primary-light);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.dashboard-header h1 {
+    margin-top: 9px;
+    color: white;
+    font-size: 42px;
+}
+
+.dashboard-header p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.stats {
+    width: 1100px;
+    max-width: 90%;
+    margin: 50px auto 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.stat-card {
+    padding: 23px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.stat-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.stat-card strong {
+    display: block;
+    margin-top: 8px;
+    color: var(--primary-light);
+    font-size: 29px;
+}
+
+.ticket-section {
+    width: 1100px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.section-header h2 {
+    color: white;
+    font-size: 20px;
+}
+
+.section-header a {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.ticket-table {
+    overflow-x: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+}
+
+th {
+    color: var(--primary-light);
+    font-size: 11px;
+}
+
+td {
+    color: var(--text);
+}
+
+td a {
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+footer {
+    margin-top: 60px;
+    padding: 30px;
+    text-align: center;
+    background: #050c16;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    color: #718399;
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header h1 {
+        font-size: 34px;
+    }
+}

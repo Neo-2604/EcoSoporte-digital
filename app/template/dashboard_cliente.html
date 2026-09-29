@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Panel del cliente | EcoSoporte Digital</title>
+
+    <link rel="stylesheet"
+          href="../static/css/cliente.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            ◆ EcoSoporte Digital
+        </div>
+
+        <div class="user-menu">
+
+            <span>
+                {{ empresa }}
+            </span>
+
+            <a href="/logout">
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+    <section class="dashboard-header">
+
+        <span>
+            MESA DE AYUDA
+        </span>
+
+        <h1>
+            Bienvenido
+        </h1>
+
+        <p>
+            Gestiona las solicitudes de soporte de tu empresa.
+        </p>
+
+    </section>
+
+
+    <section class="dashboard-content">
+
+
+        <div class="dashboard-grid">
+
+
+            <a href="/tickets/crear"
+               class="dashboard-card">
+
+                <div class="card-icon">
+                    ＋
+                </div>
+
+                <h2>
+                    Crear solicitud
+                </h2>
+
+                <p>
+                    Registra un nuevo ticket de soporte.
+                </p>
+
+            </a>
+
+
+            <a href="/tickets/lista"
+               class="dashboard-card">
+
+                <div class="card-icon">
+                    ☰
+                </div>
+
+                <h2>
+                    Mis solicitudes
+                </h2>
+
+                <p>
+                    Consulta el estado de tus tickets.
+                </p>
+
+            </a>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Tickets solucionados
+                </h2>
+
+                <strong>
+                    {{ tickets_resueltos|default(0) }}
+                </strong>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    !
+                </div>
+
+                <h2>
+                    Tickets pendientes
+                </h2>
+
+                <strong>
+                    {{ tickets_pendientes|default(0) }}
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="company-info">
+
+            <h2>
+                Información de la empresa
+            </h2>
+
+            <p>
+                <strong>Razón social:</strong>
+                {{ razon_social|default('No disponible') }}
+            </p>
+
+            <p>
+                <strong>NIT:</strong>
+                {{ nit|default('No disponible') }}
+            </p>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 EcoSoporte Digital
+    </p>
+
+</footer>
+
+</body>
+
+</html> 

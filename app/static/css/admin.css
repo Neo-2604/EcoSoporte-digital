@@ -1,0 +1,210 @@
+/* =========================================================
+   ADMIN.CSS
+   ========================================================= */
+
+:root {
+    --bg: #07111f;
+    --card: #101f33;
+    --primary: #16a085;
+    --primary-light: #20c997;
+    --white: #ffffff;
+    --text: #d8e2ee;
+    --muted: #91a4b8;
+    --border: rgba(255,255,255,0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+header {
+    height: 70px;
+    background: #081525;
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    width: 1150px;
+    max-width: 90%;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-menu span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.user-menu a {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.dashboard-header {
+    padding: 60px 5%;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(22,160,133,0.15),
+            transparent 30%
+        ),
+        #091625;
+    border-bottom: 1px solid var(--border);
+}
+
+.dashboard-header > * {
+    width: 1100px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dashboard-header span {
+    color: var(--primary-light);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.dashboard-header h1 {
+    margin-top: 8px;
+    color: white;
+    font-size: 42px;
+}
+
+.dashboard-header p {
+    margin-top: 8px;
+    color: var(--muted);
+}
+
+.admin-grid {
+    width: 1100px;
+    max-width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.admin-card {
+    min-height: 180px;
+    padding: 24px;
+    background: linear-gradient(145deg, #102136, #0c192b);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    text-decoration: none;
+    color: white;
+    transition: 0.25s;
+}
+
+.admin-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(32,201,151,0.35);
+}
+
+.admin-card h2 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.admin-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.admin-card strong {
+    display: block;
+    margin-top: 16px;
+    color: var(--primary-light);
+    font-size: 27px;
+}
+
+.admin-actions {
+    width: 1100px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.admin-actions h2 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.actions-grid a {
+    padding: 17px;
+    text-align: center;
+    color: var(--primary-light);
+    text-decoration: none;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-size: 13px;
+    transition: 0.25s;
+}
+
+.actions-grid a:hover {
+    background: rgba(22,160,133,0.10);
+}
+
+footer {
+    margin-top: 65px;
+    padding: 30px;
+    text-align: center;
+    background: #050c16;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    color: #718399;
+    font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+    .admin-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .admin-grid,
+    .actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header h1 {
+        font-size: 34px;
+    }
+}

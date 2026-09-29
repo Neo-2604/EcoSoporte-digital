@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Panel técnico | EcoSoporte Digital</title>
+
+    <link rel="stylesheet" href="../static/css/tecnico.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            ◆ EcoSoporte Digital
+        </div>
+
+        <div class="user-menu">
+
+            <span>
+                Técnico: {{ nombre_tecnico }}
+            </span>
+
+            <a href="/logout">
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+    <section class="dashboard-header">
+
+        <span>
+            PANEL DE SOPORTE
+        </span>
+
+        <h1>
+            Panel del técnico
+        </h1>
+
+        <p>
+            Gestiona y atiende las solicitudes asignadas.
+        </p>
+
+    </section>
+
+
+    <section class="stats">
+
+
+        <div class="stat-card">
+
+            <span>
+                Tickets asignados
+            </span>
+
+            <strong>
+                {{ tickets_asignados|default(0) }}
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Pendientes
+            </span>
+
+            <strong>
+                {{ tickets_pendientes|default(0) }}
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                En proceso
+            </span>
+
+            <strong>
+                {{ tickets_proceso|default(0) }}
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Solucionados
+            </span>
+
+            <strong>
+                {{ tickets_resueltos|default(0) }}
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+    <section class="ticket-section">
+
+        <div class="section-header">
+
+            <h2>
+                Solicitudes recientes
+            </h2>
+
+            <a href="/tickets/lista">
+                Ver todas
+            </a>
+
+        </div>
+
+
+        <div class="ticket-table">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Ticket
+                        </th>
+
+                        <th>
+                            Empresa
+                        </th>
+
+                        <th>
+                            Asunto
+                        </th>
+
+                        <th>
+                            Prioridad
+                        </th>
+
+                        <th>
+                            Estado
+                        </th>
+
+                        <th>
+                            Acción
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for ticket in tickets %}
+
+                    <tr>
+
+                        <td>
+                            #{{ ticket.id }}
+                        </td>
+
+                        <td>
+                            {{ ticket.empresa }}
+                        </td>
+
+                        <td>
+                            {{ ticket.asunto }}
+                        </td>
+
+                        <td>
+                            {{ ticket.prioridad }}
+                        </td>
+
+                        <td>
+                            {{ ticket.estado }}
+                        </td>
+
+                        <td>
+
+                            <a href="/tickets/detalle/{{ ticket.id }}">
+                                Ver
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    {% else %}
+
+                    <tr>
+
+                        <td colspan="6">
+                            No hay tickets disponibles.
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 EcoSoporte Digital
+    </p>
+
+</footer>
+
+</body>
+
+</html>
