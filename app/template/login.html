@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar sesión | EcoSoporte Digital</title>
+
+    <link rel="stylesheet" href="../static/css/login.css">
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <div class="login-container">
+
+        <div class="login-brand">
+
+            <div class="logo">
+                ◆ EcoSoporte Digital
+            </div>
+
+            <span class="tag">
+                MESA DE AYUDA
+            </span>
+
+            <h1>
+                Soporte tecnológico
+                para empresas
+            </h1>
+
+            <p>
+                Accede a la plataforma para registrar,
+                consultar y realizar seguimiento de tus
+                solicitudes de soporte.
+            </p>
+
+        </div>
+
+
+        <div class="login-card">
+
+            <div class="login-header">
+
+                <span>
+                    ACCESO AUTORIZADO
+                </span>
+
+                <h2>
+                    Iniciar sesión
+                </h2>
+
+                <p>
+                    Utiliza las credenciales proporcionadas
+                    por EcoSoporte Digital.
+                </p>
+
+            </div>
+
+
+            {% with messages = get_flashed_messages() %}
+
+                {% if messages %}
+
+                    {% for message in messages %}
+
+                        <div class="alert">
+                            {{ message }}
+                        </div>
+
+                    {% endfor %}
+
+                {% endif %}
+
+            {% endwith %}
+
+
+            <form method="POST"
+                  action="/login">
+
+                <div class="form-group">
+
+                    <label for="usuario">
+                        Usuario
+                    </label>
+
+                    <input
+                        type="text"
+                        id="usuario"
+                        name="usuario"
+                        placeholder="Ingresa tu usuario"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Ingresa tu contraseña"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Ingresar
+                    <span>→</span>
+                </button>
+
+            </form>
+
+
+            <div class="login-security">
+
+                🔒 Acceso exclusivo para usuarios autorizados.
+
+            </div>
+
+
+            <a href="/" class="back-home">
+                ← Volver al inicio
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

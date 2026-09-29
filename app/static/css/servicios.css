@@ -1,0 +1,802 @@
+/* =========================================================
+   ECOSOPORTE DIGITAL
+   CSS EXCLUSIVO - PÁGINA DE SERVICIOS
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+
+    --bg-dark: #07111f;
+    --bg-dark-2: #0a1626;
+    --bg-card: #101f33;
+
+    --primary: #16a085;
+    --primary-light: #20c997;
+    --primary-dark: #087f68;
+
+    --white: #ffffff;
+
+    --text: #d8e2ee;
+    --text-muted: #91a4b8;
+
+    --border: rgba(255, 255, 255, 0.09);
+
+    --shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--bg-dark);
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+
+ul {
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(7, 17, 31, 0.94);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.20);
+}
+
+
+header nav {
+
+    width: min(90%, 1200px);
+
+    min-height: 76px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+
+    color: var(--white);
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    white-space: nowrap;
+}
+
+
+.logo::before {
+
+    content: "◈";
+
+    color: var(--primary-light);
+
+    margin-right: 9px;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+header nav ul {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+header nav ul li a {
+
+    display: block;
+
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    color: #b9c8d8;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+
+header nav ul li a:hover {
+
+    color: var(--white);
+
+    background:
+        rgba(22, 160, 133, 0.12);
+}
+
+
+/* SERVICIOS ACTIVO */
+
+header nav ul li:nth-child(2) a {
+
+    color: var(--primary-light);
+
+    background:
+        rgba(22, 160, 133, 0.10);
+}
+
+
+/* LOGIN */
+
+header nav ul li:last-child a {
+
+    border:
+        1px solid rgba(32, 201, 151, 0.40);
+
+    color: var(--primary-light);
+}
+
+
+header nav ul li:last-child a:hover {
+
+    background: var(--primary);
+
+    color: white;
+
+    border-color: var(--primary);
+}
+
+
+/* =========================================================
+   ENCABEZADO DE LA PÁGINA
+   ========================================================= */
+
+.page-header {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 100px 5%;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(22, 160, 133, 0.20),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #07111f,
+            #0c1c30
+        );
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+/* CÍRCULO DECORATIVO */
+
+.page-header::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+
+    height: 400px;
+
+    right: -180px;
+
+    top: -200px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(32, 201, 151, 0.12);
+
+    box-shadow:
+        0 0 0 60px rgba(32, 201, 151, 0.025),
+        0 0 0 120px rgba(32, 201, 151, 0.015);
+}
+
+
+/* CONTENIDO */
+
+.page-header h1,
+.page-header p {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1200px, 90%);
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+/* TÍTULO */
+
+.page-header h1 {
+
+    color: var(--white);
+
+    font-size:
+        clamp(38px, 5vw, 52px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 15px;
+}
+
+
+/* LÍNEA VERDE */
+
+.page-header h1::after {
+
+    content: "";
+
+    display: block;
+
+    width: 50px;
+
+    height: 3px;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+
+    background: var(--primary-light);
+}
+
+
+/* DESCRIPCIÓN */
+
+.page-header p {
+
+    color: var(--text-muted);
+
+    font-size: 17px;
+
+    max-width: 700px;
+}
+
+
+/* =========================================================
+   SECCIÓN DE SERVICIOS
+   ========================================================= */
+
+.services {
+
+    padding: 90px 5%;
+
+    background: var(--bg-dark-2);
+}
+
+
+/* =========================================================
+   CONTENEDOR DE CARDS
+   ========================================================= */
+
+.services .cards {
+
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.services .card {
+
+    position: relative;
+
+    min-height: 260px;
+
+    padding: 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102136,
+            #0c192b
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition: var(--transition);
+}
+
+
+/* BARRA SUPERIOR */
+
+.services .card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--primary-light),
+            transparent
+        );
+
+    opacity: 0;
+
+    transition: var(--transition);
+}
+
+
+/* ICONO DECORATIVO */
+
+.services .card::after {
+
+    content: "›";
+
+    position: absolute;
+
+    right: 25px;
+
+    top: 20px;
+
+    width: 35px;
+
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(22, 160, 133, 0.10);
+
+    color: var(--primary-light);
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    opacity: 0;
+
+    transform: translateX(-5px);
+
+    transition: var(--transition);
+}
+
+
+/* HOVER */
+
+.services .card:hover {
+
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(32, 201, 151, 0.30);
+
+    box-shadow: var(--shadow);
+}
+
+
+.services .card:hover::before {
+
+    opacity: 1;
+}
+
+
+.services .card:hover::after {
+
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   TÍTULOS DE SERVICIOS
+   ========================================================= */
+
+.services .card h2 {
+
+    color: var(--white);
+
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    margin-bottom: 16px;
+
+    padding-right: 40px;
+}
+
+
+/* =========================================================
+   TEXTO DE SERVICIOS
+   ========================================================= */
+
+.services .card p {
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   IDENTIFICACIÓN VISUAL DE SERVICIOS
+   ========================================================= */
+
+/* Soporte técnico */
+
+.services .card:nth-child(1) {
+
+    border-top:
+        2px solid #38bdf8;
+}
+
+
+/* Mantenimiento preventivo */
+
+.services .card:nth-child(2) {
+
+    border-top:
+        2px solid #20c997;
+}
+
+
+/* Mantenimiento correctivo */
+
+.services .card:nth-child(3) {
+
+    border-top:
+        2px solid #f59e0b;
+}
+
+
+/* Mesa de ayuda */
+
+.services .card:nth-child(4) {
+
+    border-top:
+        2px solid #a78bfa;
+}
+
+
+/* Software */
+
+.services .card:nth-child(5) {
+
+    border-top:
+        2px solid #60a5fa;
+}
+
+
+/* Hardware */
+
+.services .card:nth-child(6) {
+
+    border-top:
+        2px solid #f472b6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    padding: 35px 20px;
+
+    background: #050c16;
+
+    border-top:
+        1px solid var(--border);
+
+    text-align: center;
+}
+
+
+footer p {
+
+    color: #718399;
+
+    font-size: 13px;
+
+    margin: 5px 0;
+}
+
+
+footer p:first-child {
+
+    color: #aebdcc;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 9px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #050c16;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: #1c354d;
+
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--primary);
+}
+
+
+/* =========================================================
+   SELECCIÓN
+   ========================================================= */
+
+::selection {
+
+    background: var(--primary);
+
+    color: white;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    header nav {
+
+        width: 92%;
+    }
+
+
+    header nav ul {
+
+        gap: 2px;
+    }
+
+
+    header nav ul li a {
+
+        padding: 8px 9px;
+
+        font-size: 12px;
+    }
+
+
+    .services .cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MÓVIL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    header nav {
+
+        min-height: 68px;
+    }
+
+
+    header nav ul {
+
+        display: none;
+    }
+
+
+    .page-header {
+
+        padding: 75px 5%;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 38px;
+    }
+
+
+    .page-header p {
+
+        font-size: 15px;
+    }
+
+
+    .services {
+
+        padding: 65px 5%;
+    }
+
+
+    .services .cards {
+
+        grid-template-columns: 1fr;
+
+        width: 100%;
+    }
+
+
+    .services .card {
+
+        min-height: auto;
+
+        padding: 28px;
+    }
+}
+
+
+/* =========================================================
+   MÓVILES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .logo {
+
+        font-size: 17px;
+    }
+
+
+    .logo::before {
+
+        font-size: 16px;
+
+        margin-right: 5px;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 34px;
+    }
+}

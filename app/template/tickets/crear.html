@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Crear ticket | EcoSoporte Digital</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/craer_tickets.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            ◆ EcoSoporte Digital
+        </div>
+
+        <a href="/cliente/dashboard">
+            ← Panel principal
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="ticket-header">
+
+        <span>
+            MESA DE AYUDA
+        </span>
+
+        <h1>
+            Crear solicitud
+        </h1>
+
+        <p>
+            Describe el problema para que nuestro equipo
+            pueda asignar el nivel de soporte correspondiente.
+        </p>
+
+    </section>
+
+
+    <section class="ticket-form-container">
+
+        <form method="POST"
+              action="/tickets/crear">
+
+
+            <div class="form-group">
+
+                <label for="tipo">
+                    Tipo de solicitud
+                </label>
+
+                <select
+                    id="tipo"
+                    name="tipo"
+                    required
+                >
+
+                    <option value="">
+                        Selecciona
+                    </option>
+
+                    <option value="Incidente">
+                        Incidente
+                    </option>
+
+                    <option value="Solicitud">
+                        Solicitud de servicio
+                    </option>
+
+                    <option value="Mantenimiento">
+                        Mantenimiento
+                    </option>
+
+                    <option value="Consulta">
+                        Consulta
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="categoria">
+                    Categoría
+                </label>
+
+                <select
+                    id="categoria"
+                    name="categoria"
+                    required
+                >
+
+                    <option value="">
+                        Selecciona una categoría
+                    </option>
+
+                    <option value="Hardware">
+                        Hardware
+                    </option>
+
+                    <option value="Software">
+                        Software
+                    </option>
+
+                    <option value="Redes">
+                        Redes
+                    </option>
+
+                    <option value="Sistemas">
+                        Sistemas
+                    </option>
+
+                    <option value="Accesos">
+                        Accesos y credenciales
+                    </option>
+
+                    <option value="Otro">
+                        Otro
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="prioridad">
+                    Prioridad
+                </label>
+
+                <select
+                    id="prioridad"
+                    name="prioridad"
+                    required
+                >
+
+                    <option value="">
+                        Selecciona
+                    </option>
+
+                    <option value="Baja">
+                        Baja
+                    </option>
+
+                    <option value="Media">
+                        Media
+                    </option>
+
+                    <option value="Alta">
+                        Alta
+                    </option>
+
+                    <option value="Critica">
+                        Crítica
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="asunto">
+                    Asunto
+                </label>
+
+                <input
+                    type="text"
+                    id="asunto"
+                    name="asunto"
+                    placeholder="Ejemplo: Computador no enciende"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="equipo">
+                    Equipo o sistema afectado
+                </label>
+
+                <input
+                    type="text"
+                    id="equipo"
+                    name="equipo"
+                    placeholder="Computador, impresora, sistema..."
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="descripcion">
+                    Descripción del problema
+                </label>
+
+                <textarea
+                    id="descripcion"
+                    name="descripcion"
+                    rows="7"
+                    placeholder="Describe detalladamente lo que sucede..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit">
+                Crear ticket
+                <span>→</span>
+            </button>
+
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 EcoSoporte Digital
+    </p>
+
+</footer>
+
+</body>
+
+</html>

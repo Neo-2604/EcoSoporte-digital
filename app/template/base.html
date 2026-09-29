@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        EcoSoporte Digital
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    {% block extra_css %}{% endblock %}
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="container nav-content">
+
+        <a href="{{ url_for('inicio') }}"
+           class="logo">
+
+            ECO<span>SOPORTE</span>
+            DIGITAL
+
+        </a>
+
+        <nav>
+
+            <a href="{{ url_for('inicio') }}">
+                Inicio
+            </a>
+
+            <a href="{{ url_for('servicios') }}">
+                Servicios
+            </a>
+
+            <a href="{{ url_for('nosotros') }}">
+                Nosotros
+            </a>
+
+            <a href="{{ url_for('contacto') }}">
+                Contacto
+            </a>
+
+            <a href="{{ url_for('tickets') }}">
+                Mesa de ayuda
+            </a>
+
+            <a href="{{ url_for('login') }}"
+               class="btn btn-outline">
+                Iniciar sesión
+            </a>
+
+        </nav>
+
+        <button class="menu-btn"
+                onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% if messages %}
+
+            <div class="container messages">
+
+                {% for category, message in messages %}
+
+                    <div class="alert {{ category }}">
+
+                        {{ message }}
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% endif %}
+
+    {% endwith %}
+
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+
+            <h3>
+                ECO SOPORTE DIGITAL
+            </h3>
+
+            <p>
+                Soluciones tecnológicas para empresas.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>Enlaces</h4>
+
+            <a href="{{ url_for('inicio') }}">
+                Inicio
+            </a>
+
+            <a href="{{ url_for('servicios') }}">
+                Servicios
+            </a>
+
+            <a href="{{ url_for('contacto') }}">
+                Contacto
+            </a>
+
+        </div>
+
+        <div>
+
+            <h4>Soporte</h4>
+
+            <a href="{{ url_for('tickets') }}">
+                Mesa de ayuda
+            </a>
+
+            <a href="{{ url_for('login') }}">
+                Iniciar sesión
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 EcoSoporte Digital
+
+    </div>
+
+</footer>
+
+
+<script
+    src="{{ url_for('static', filename='js/main.js') }}">
+</script>
+
+{% block extra_js %}{% endblock %}
+
+</body>
+
+</html>

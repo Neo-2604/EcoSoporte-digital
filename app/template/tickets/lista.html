@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mis tickets | EcoSoporte Digital</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/lista_ticket.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            ◆ EcoSoporte Digital
+        </div>
+
+        <a href="/cliente/dashboard">
+            ← Panel principal
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="ticket-header">
+
+        <span>
+            MESA DE AYUDA
+        </span>
+
+        <h1>
+            Solicitudes de soporte
+        </h1>
+
+        <p>
+            Consulta el estado y seguimiento de tus tickets.
+        </p>
+
+    </section>
+
+
+    <section class="ticket-list">
+
+        {% for ticket in tickets %}
+
+        <article class="ticket-card">
+
+            <div class="ticket-top">
+
+                <span>
+                    #{{ ticket.id }}
+                </span>
+
+                <span class="estado">
+                    {{ ticket.estado }}
+                </span>
+
+            </div>
+
+            <h2>
+                {{ ticket.asunto }}
+            </h2>
+
+            <p>
+                {{ ticket.descripcion }}
+            </p>
+
+            <div class="ticket-info">
+
+                <span>
+                    Categoría: {{ ticket.categoria }}
+                </span>
+
+                <span>
+                    Prioridad: {{ ticket.prioridad }}
+                </span>
+
+                <span>
+                    Fecha: {{ ticket.fecha }}
+                </span>
+
+            </div>
+
+
+            <a href="/tickets/detalle/{{ ticket.id }}">
+                Ver detalle →
+            </a>
+
+        </article>
+
+
+        {% else %}
+
+        <div class="empty-state">
+
+            <h2>
+                No tienes solicitudes registradas.
+            </h2>
+
+            <p>
+                Puedes crear tu primera solicitud desde la
+                mesa de ayuda.
+            </p>
+
+            <a href="/tickets/crear">
+                Crear solicitud
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 EcoSoporte Digital
+    </p>
+
+</footer>
+
+</body>
+
+</html>

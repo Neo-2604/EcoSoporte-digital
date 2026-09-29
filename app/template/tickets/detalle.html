@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Detalle del ticket | EcoSoporte Digital</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/detalle_ticket.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            ◆ EcoSoporte Digital
+        </div>
+
+        <a href="/tickets/lista">
+            ← Volver a tickets
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="ticket-header">
+
+        <span>
+            TICKET #{{ ticket.id }}
+        </span>
+
+        <h1>
+            {{ ticket.asunto }}
+        </h1>
+
+        <p>
+            Detalle y seguimiento de la solicitud.
+        </p>
+
+    </section>
+
+
+    <section class="detail-container">
+
+
+        <div class="detail-card">
+
+            <h2>
+                Información del ticket
+            </h2>
+
+
+            <div class="detail-row">
+
+                <strong>
+                    Empresa
+                </strong>
+
+                <span>
+                    {{ ticket.empresa }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <strong>
+                    Categoría
+                </strong>
+
+                <span>
+                    {{ ticket.categoria }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <strong>
+                    Prioridad
+                </strong>
+
+                <span>
+                    {{ ticket.prioridad }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <strong>
+                    Nivel de soporte
+                </strong>
+
+                <span>
+                    Nivel {{ ticket.nivel_soporte }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <strong>
+                    Estado
+                </strong>
+
+                <span>
+                    {{ ticket.estado }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <strong>
+                    Técnico asignado
+                </strong>
+
+                <span>
+                    {{ ticket.tecnico|default('Pendiente de asignación') }}
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="detail-card">
+
+            <h2>
+                Descripción
+            </h2>
+
+            <p class="description">
+                {{ ticket.descripcion }}
+            </p>
+
+        </div>
+
+
+        <div class="detail-card">
+
+            <h2>
+                Seguimiento
+            </h2>
+
+            {% for seguimiento in seguimientos %}
+
+            <div class="comment">
+
+                <strong>
+                    {{ seguimiento.usuario }}
+                </strong>
+
+                <span>
+                    {{ seguimiento.fecha }}
+                </span>
+
+                <p>
+                    {{ seguimiento.mensaje }}
+                </p>
+
+            </div>
+
+            {% else %}
+
+            <p class="no-comments">
+                Aún no hay actualizaciones sobre este ticket.
+            </p>
+
+            {% endfor %}
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 EcoSoporte Digital
+    </p>
+
+</footer>
+
+</body>
+
+</html>

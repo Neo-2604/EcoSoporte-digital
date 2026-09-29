@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Administrador | EcoSoporte Digital</title>
+
+    <link rel="stylesheet" href="../static/css/admin.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            ◆ EcoSoporte Digital
+        </div>
+
+        <div class="user-menu">
+
+            <span>
+                Administrador
+            </span>
+
+            <a href="/logout">
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+    <section class="dashboard-header">
+
+        <span>
+            ADMINISTRACIÓN
+        </span>
+
+        <h1>
+            Panel administrativo
+        </h1>
+
+        <p>
+            Gestiona empresas, usuarios, técnicos y solicitudes.
+        </p>
+
+    </section>
+
+
+    <section class="admin-grid">
+
+
+        <a href="/tickets/lista"
+           class="admin-card">
+
+            <h2>
+                Tickets
+            </h2>
+
+            <p>
+                Consultar y administrar todas las solicitudes.
+            </p>
+
+            <strong>
+                {{ total_tickets|default(0) }}
+            </strong>
+
+        </a>
+
+
+        <div class="admin-card">
+
+            <h2>
+                Empresas
+            </h2>
+
+            <p>
+                Empresas registradas en EcoSoporte Digital.
+            </p>
+
+            <strong>
+                {{ total_empresas|default(0) }}
+            </strong>
+
+        </div>
+
+
+        <div class="admin-card">
+
+            <h2>
+                Técnicos
+            </h2>
+
+            <p>
+                Personal autorizado para brindar soporte.
+            </p>
+
+            <strong>
+                {{ total_tecnicos|default(0) }}
+            </strong>
+
+        </div>
+
+
+        <div class="admin-card">
+
+            <h2>
+                Solicitudes pendientes
+            </h2>
+
+            <p>
+                Tickets que requieren atención.
+            </p>
+
+            <strong>
+                {{ tickets_pendientes|default(0) }}
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+    <section class="admin-actions">
+
+        <h2>
+            Acciones administrativas
+        </h2>
+
+
+        <div class="actions-grid">
+
+            <a href="/registro">
+                Registrar empresa
+            </a>
+
+            <a href="/tickets/lista">
+                Gestionar tickets
+            </a>
+
+            <a href="/tecnico/dashboard">
+                Panel técnico
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 EcoSoporte Digital
+    </p>
+
+</footer>
+
+</body>
+
+</html>

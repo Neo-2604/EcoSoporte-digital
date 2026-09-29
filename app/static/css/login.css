@@ -1,0 +1,230 @@
+/* =========================================================
+   ECOSOPORTE DIGITAL
+   LOGIN.CSS
+   ========================================================= */
+
+:root {
+    --bg: #07111f;
+    --bg-secondary: #0b1728;
+    --card: #101f33;
+    --input: #071321;
+
+    --primary: #16a085;
+    --primary-light: #20c997;
+
+    --white: #ffffff;
+    --text: #d8e2ee;
+    --muted: #91a4b8;
+
+    --border: rgba(255,255,255,0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(22,160,133,0.12),
+            transparent 30%
+        ),
+        linear-gradient(135deg, #07111f, #091827);
+    color: var(--text);
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 1100px;
+    max-width: 92%;
+    display: grid;
+    grid-template-columns: 1fr 430px;
+    gap: 80px;
+    align-items: center;
+}
+
+.login-brand {
+    padding: 30px 0;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 55px;
+}
+
+.tag {
+    color: var(--primary-light);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+.login-brand h1 {
+    margin: 15px 0 20px;
+    color: white;
+    font-size: clamp(40px, 5vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.login-brand p {
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.login-card {
+    padding: 38px;
+    background: linear-gradient(145deg, #102136, #0b192b);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.login-header {
+    margin-bottom: 25px;
+}
+
+.login-header span {
+    color: var(--primary-light);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.login-header h2 {
+    color: white;
+    font-size: 29px;
+    margin: 7px 0;
+}
+
+.login-header p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    color: #cbd7e3;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    background: var(--input);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+}
+
+.form-group input::placeholder {
+    color: #60748a;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(22,160,133,0.10);
+}
+
+.login-card button {
+    width: 100%;
+    height: 49px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.login-card button:hover {
+    background: var(--primary-light);
+    color: #03130f;
+    transform: translateY(-2px);
+}
+
+.login-security {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(22,160,133,0.06);
+    border: 1px solid rgba(32,201,151,0.10);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.back-home {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #718399;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.back-home:hover {
+    color: var(--primary-light);
+}
+
+.alert {
+    margin-bottom: 18px;
+    padding: 11px 13px;
+    background: rgba(180,50,50,0.10);
+    border: 1px solid rgba(180,50,50,0.25);
+    border-radius: 8px;
+    color: #ffb4b4;
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .login-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 60px 0;
+    }
+
+    .login-brand {
+        text-align: center;
+    }
+
+    .login-brand p {
+        margin: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .login-card {
+        padding: 25px 20px;
+    }
+
+    .login-brand h1 {
+        font-size: 38px;
+    }
+}
